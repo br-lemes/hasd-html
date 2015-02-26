@@ -25,9 +25,9 @@ end
 <body>
 	<% basepath = lfs.currentdir() %>
 	<h1 id="000">Sumário</h1>
-	<ul type="1">
+	<ul>
 	<% for file in lfs.dir(".") do if file:match("^%d%d%d$") then %>
-		<li><a href="#<%= file %>"><% include(file, "nome") %></a></li>
+		<li><a href="#<%= file %>"><%= file %>. <% include(file, "nome") %></a></li>
 	<% end end %>
 	</ul>
 
