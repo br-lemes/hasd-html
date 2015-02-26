@@ -12,6 +12,6 @@ Content-type: text/html
 </head>
 <body>
 	<h1 id="<%= num %>"><%= num %>. <%in nome %></h1>
-	<%in letra %>
+	<%in letra.html %>
 </body>
 </html>

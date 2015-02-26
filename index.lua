@@ -33,7 +33,7 @@ end
 
 	<% for file in lfs.dir(".") do if file:match("^%d%d%d$") then %>
 		<h1 id="<%= file %>"><%= file %>. <% include(file, "nome") %></h1>
-		<% include(file, "letra") %>
+		<% include(file, "letra.html") %>
 	<% end end %>	
 </body>
 </html>
