@@ -1,0 +1,8 @@
+#!/bin/sh
+
+mkdir -p $1/letra
+cd $1/letra
+ln -s ../../001/letra/index.lua .
+ln -s ../../001/letra/Makefile .
+touch nome letra.html
+pluma nome letra.html
