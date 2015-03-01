@@ -6,6 +6,16 @@ Content-type: text/html
 <%
 require("lfs")
 
+dirlist = { }
+
+for file in lfs.dir(".") do
+	if file:match("^%d%d%d$") then
+		table.insert(dirlist, file)
+	end
+end
+
+table.sort(dirlist)
+
 function include(name, what)
 	file = io.open(string.format("%s/letra/%s", name, what))
 	if file then
@@ -26,14 +36,13 @@ end
 	<% basepath = lfs.currentdir() %>
 	<h1 id="000">Sumário</h1>
 	<ul>
-	<% for file in lfs.dir(".") do if file:match("^%d%d%d$") then %>
-		<li><a href="#<%= file %>"><%= file %>. <% include(file, "nome") %></a></li>
-	<% end end %>
+	<% for i,v in ipairs(dirlist) do %>
+		<li><a href="#<%= v %>"><%= v %>. <% include(v, "nome") %></a></li>
+	<% end %>
 	</ul>
-
-	<% for file in lfs.dir(".") do if file:match("^%d%d%d$") then %>
-		<h1 id="<%= file %>"><%= file %>. <% include(file, "nome") %></h1>
-		<% include(file, "letra.html") %>
-	<% end end %>	
+	<% for i,v in ipairs(dirlist) do %>
+		<h1 id="<%= v %>"><%= v %>. <% include(v, "nome") %></h1>
+		<% include(v, "letra.html") %>
+	<% end %>
 </body>
 </html>
