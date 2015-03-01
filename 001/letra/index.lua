@@ -8,7 +8,7 @@ Content-type: text/html
 <html lang="pt-BR">
 <head>
 	<meta charset="UTF-8">
-	<title><%in nome %> - Hinário Adventista</title>
+	<title>Hinário Adventista</title>
 </head>
 <body>
 	<h1 id="<%= num %>"><%= num %>. <%in nome %></h1>
