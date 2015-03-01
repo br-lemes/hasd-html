@@ -1,5 +1,5 @@
 
-index.html: index.lua nome letra
+index.html: index.lua nome letra.html
 	./index.lua > index.html
 
 clean:
