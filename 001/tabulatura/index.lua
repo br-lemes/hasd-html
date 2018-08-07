@@ -18,7 +18,7 @@ Content-type: text/html
 </head>
 <body>
 	<h1 id="<%= num %>"><%= num %>. <%in ../letra/nome %></h1>
-	<div class="vex-tabdiv" width=700 scale=1.0>
+	<div class="vex-tabdiv" width=650 scale=1.0>
 		<%in tabulatura %>
 	</div>
 </body>
